@@ -185,6 +185,9 @@ body {
   border-radius: 20px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column; /* makes card-body stretch vertically */
+  height: 100%;
 }
 
 .service-card img {
@@ -199,12 +202,38 @@ body {
 
 .service-card:hover {
   box-shadow: 0 8px 20px rgba(197,108,240,0.2);
-  border: 2px solid black;
+  border: 2px solid var(--primary-color);
 }
 
+/* Card body layout */
+.service-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes button to bottom */
+  flex-grow: 1;
+  padding: 20px 15px;
+}
+
+/* Heading */
 .service-card .card-body h5 {
   color: var(--primary-color);
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.service-card .btn {
+  align-self: center;
+  border-radius: 30px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.service-card .btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 /* ====== Why Choose Us ====== */
