@@ -1,0 +1,267 @@
+/* ====== Global Styling ====== */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Brand Colors */
+:root {
+  --primary-color: #c56cf0; /* plum pink */
+  --secondary-color: #ffb6c1; /* soft blush pink */
+  --dark-color: #222;
+  --light-color: #f8f9fa;
+  --light-bg: #fdf9ff;
+}
+
+/* ====== Navbar (SalonHub Premium) ====== */
+.navbar {
+  background-color: var(--dark-color) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color) !important;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.navbar-nav {
+  gap: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--light-color) !important;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Active & Hover effect */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Underline hover animation */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Buttons (Login / Sign Up) */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(197,108,240,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  box-shadow: 0 5px 12px rgba(197,108,240,0.4);
+}
+
+/* Optional: make Login outlined and Sign Up filled */
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Responsive alignment */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    gap: 0.8rem;
+  }
+  .navbar .btn {
+    margin-top: 10px;
+  }
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('asset/makeup.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-weight: 700;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.hero .btn {
+  margin-top: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(197,108,240,0.3);
+}
+
+/* ====== Services Section ====== */
+.service-card {
+  border: none;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.service-card img {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 20px rgba(197,108,240,0.2);
+  border: 2px solid black;
+}
+
+.service-card .card-body h5 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* ====== Why Choose Us ====== */
+.why-choose-us {
+  background: linear-gradient(180deg, #fff 0%, #fdf9ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  color: var(--dark-color);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: var(--secondary-color);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+.choose-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f3e9ff;
+}
+
+.choose-card .icon {
+  font-size: 2.5rem;
+  color: var(--primary-color); /* 👈 gradient removed, solid color added */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.choose-card h5 {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.choose-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Hover Effects */
+.choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(197,108,240,0.2);
+  border-color: var(--primary-color);
+}
+
+.choose-card:hover .icon {
+  transform: scale(1.2) rotate(5deg);
+  color: var(--secondary-color); /* optional color change on hover */
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .choose-card {
+    padding: 25px 15px;
+  }
+}
+
+/* ====== Footer ====== */
+footer {
+  background: #111;
+}
+
+footer p, footer small {
+  color: #ddd;
+}
+
+footer a {
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
